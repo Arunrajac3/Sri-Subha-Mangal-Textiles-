@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Subha Mangal Textiles | Premium Cotton Towels & Authentic Veshtis</title>
+  <meta name="description" content="Sri Subha Mangal Textiles — South Indian textile manufacturer & exporter of premium 100% combed cotton towels (400-600 GSM) and traditional/modern veshtis (dhotis). Wholesale, OEM & private label available." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#0f172a',
+              800: '#1e293b',
+              700: '#334155',
+            },
+            cream: '#fdfbf7',
+            gold: {
+              500: '#d97706',
+              600: '#b45309',
+              400: '#f59e0b',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Playfair Display', Georgia, serif; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+    }
+    .gold-underline {
+      background: linear-gradient(90deg, transparent, #d97706, transparent);
+      height: 2px;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.15);
+    }
+    .nav-scrolled {
+      background: rgba(15, 23, 42, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Admin panel */
+    .admin-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:100;background:#0f172a;border-bottom:1px solid rgba(217,119,6,.4);padding:8px 16px}
+    .admin-bar.show{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .admin-bar span{color:#f59e0b;font-size:.85rem;font-weight:600}
+    .admin-bar button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;padding:6px 12px;border-radius:6px;font-size:.8rem;cursor:pointer}
+    .admin-bar button:hover{background:rgba(245,158,11,.2);border-color:#d97706}
+    .admin-bar button.active{background:#d97706;border-color:#d97706}
+    #adminPanel{display:none;min-height:100vh;background:#f8fafc;padding-top:56px}
+    #adminPanel.show{display:block}
+    #publicSite.hide{display:none}
+    .admin-wrap{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+    .admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:28px}
+    .admin-stat{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+    .admin-stat .n{font-size:1.6rem;font-weight:700;color:#0f172a}
+    .admin-stat .l{font-size:.8rem;color:#64748b;margin-top:4px}
+    .admin-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+    .admin-card h3{font-size:1rem;font-weight:700;color:#0f172a;margin-bottom:12px}
+    .quote-item{border:1px solid #e2e8f0;border-radius:10px;padding:14px;margin-bottom:10px;background:#fafafa}
+    .quote-item .meta{font-size:.78rem;color:#64748b;margin-bottom:6px}
+    .quote-item .name{font-weight:700;color:#0f172a}
+    .badge-new{background:#fef3c7;color:#b45309;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px}
+    .badge-done{background:#dcfce7;color:#166534;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px}
+    .admin-table{width:100%;border-collapse:collapse;font-size:.88rem}
+    .admin-table th,.admin-table td{text-align:left;padding:10px 8px;border-bottom:1px solid #e2e8f0}
+    .admin-table th{color:#64748b;font-weight:600;font-size:.75rem;text-transform:uppercase}
+    .btn-sm{padding:6px 12px;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer;border:1px solid #e2e8f0;background:#fff}
+    .btn-sm.primary{background:#0f172a;color:#fff;border-color:#0f172a}
+    .btn-sm.danger{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+    .btn-sm.gold{background:#d97706;color:#fff;border-color:#d97706}
+    .field{margin-bottom:12px}
+    .field label{display:block;font-size:.8rem;font-weight:600;color:#334155;margin-bottom:4px}
+    .field input,.field textarea,.field select{width:100%;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:.9rem}
+    .modal-bg{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:200;align-items:center;justify-content:center;padding:16px}
+    .modal-bg.show{display:flex}
+    .modal-box{background:#fff;border-radius:14px;padding:24px;max-width:420px;width:100%;max-height:90vh;overflow:auto}
+    .login-hint{font-size:.75rem;color:#94a3b8;margin-top:10px;text-align:center}
+
+  </style>
+</head>
+<body class="bg-cream text-navy-900 antialiased">
+  <!-- ADMIN TOP BAR -->
+  <div class="admin-bar" id="adminBar">
+    <span>🛠 Admin — Sri Subha Mangal Textiles</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button type="button" class="active" data-admin="dash" onclick="showAdminTab('dash')">Dashboard</button>
+      <button type="button" data-admin="quotes" onclick="showAdminTab('quotes')">Quotes</button>
+      <button type="button" data-admin="products" onclick="showAdminTab('products')">Products</button>
+      <button type="button" data-admin="settings" onclick="showAdminTab('settings')">Settings</button>
+      <button type="button" onclick="exitAdmin()">View Site</button>
+      <button type="button" onclick="adminLogout()">Logout</button>
+    </div>
+  </div>
+
+  <div id="publicSite">
+
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900/95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-full border-2 border-gold-500 flex items-center justify-center">
+            <span class="text-gold-500 font-display font-bold text-lg">S</span>
+          </div>
+          <div>
+            <span class="font-display font-bold text-white text-base sm:text-lg tracking-wide">Sri Subha Mangal</span>
+            <span class="font-display text-gold-500 text-base sm:text-lg tracking-wide"> Textiles</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#home" class="text-sm font-medium text-white/80 hover:text-gold-400 transition">Home</a>
+          <a href="#about" class="text-sm font-medium text-white/80 hover:text-gold-400 transition">About Us</a>
+          <a href="#products" class="text-sm font-medium text-white/80 hover:text-gold-400 transition">Products</a>
+          <a href="#manufacturing" class="text-sm font-medium text-white/80 hover:text-gold-400 transition">Manufacturing</a>
+          <a href="#quality" class="text-sm font-medium text-white/80 hover:text-gold-400 transition">Quality</a>
+          <a href="#contact" class="text-sm font-medium text-white/80 hover:text-gold-400 transition">Contact</a>
+        </nav>
+
+        <!-- CTA -->
+        <div class="hidden lg:flex items-center gap-3">
+          <button type="button" id="desktopAdminBtn" onclick="openLogin()" class="text-white/40 hover:text-gold-400 text-xs font-medium">Admin</button>
+          <a href="#contact" class="inline-flex items-center px-5 py-2.5 bg-gold-500 hover:bg-gold-600 text-white text-sm font-semibold rounded-md transition shadow-lg shadow-gold-500/20">
+            Request Wholesale Quote
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/10">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#home" class="block text-white/90 hover:text-gold-400 py-2">Home</a>
+        <a href="#about" class="block text-white/90 hover:text-gold-400 py-2">About Us</a>
+        <a href="#products" class="block text-white/90 hover:text-gold-400 py-2">Products</a>
+        <a href="#manufacturing" class="block text-white/90 hover:text-gold-400 py-2">Manufacturing</a>
+        <a href="#quality" class="block text-white/90 hover:text-gold-400 py-2">Quality</a>
+        <a href="#contact" class="block text-white/90 hover:text-gold-400 py-2">Contact</a>
+        <a href="#contact" class="block mt-3 text-center px-4 py-3 bg-gold-500 text-white font-semibold rounded-md">Request Wholesale Quote</a>
+        <button type="button" onclick="openLogin()" class="block w-full text-left text-white/50 hover:text-gold-400 py-2 text-sm">Admin Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+            <span class="text-sm text-white/80">South Indian Heritage • Global Export</span>
+          </div>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            Premium Cotton Towels<br>
+            <span class="text-gold-400">& Authentic Veshtis</span>
+          </h1>
+          <p class="text-lg text-white/75 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            100% combed cotton. Durable weave. Large-scale manufacturing capacity. 
+            Trusted by wholesale buyers, distributors and retail chains across India and beyond.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#products" class="inline-flex items-center justify-center px-7 py-3.5 bg-gold-500 hover:bg-gold-600 text-white font-semibold rounded-md transition shadow-lg shadow-gold-500/25">
+              Explore Products
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center px-7 py-3.5 border-2 border-white/30 hover:border-gold-400 text-white font-semibold rounded-md transition">
+              Download Catalog
+            </a>
+          </div>
+          <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-8 text-center lg:text-left">
+            <div>
+              <div class="text-2xl font-bold text-gold-400">400–600</div>
+              <div class="text-sm text-white/60">GSM Towels</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-gold-400">100%</div>
+              <div class="text-sm text-white/60">Combed Cotton</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-gold-400">OEM</div>
+              <div class="text-sm text-white/60">Private Label</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card -->
+        <div class="relative hidden lg:block">
+          <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 shadow-2xl">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-navy-800/80 rounded-xl p-6 text-center border border-white/5">
+                <div class="text-4xl mb-3">🛁</div>
+                <div class="text-white font-semibold">Premium Towels</div>
+                <div class="text-white/50 text-sm mt-1">Hotel & Home</div>
+              </div>
+              <div class="bg-navy-800/80 rounded-xl p-6 text-center border border-white/5">
+                <div class="text-4xl mb-3">👘</div>
+                <div class="text-white font-semibold">Authentic Veshtis</div>
+                <div class="text-white/50 text-sm mt-1">Traditional & Modern</div>
+              </div>
+              <div class="bg-navy-800/80 rounded-xl p-6 text-center border border-white/5 col-span-2">
+                <div class="text-white font-semibold">Bulk • Wholesale • Export Ready</div>
+                <div class="text-white/50 text-sm mt-1">Competitive pricing • On-time delivery</div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gold-500/20 rounded-full blur-2xl"></div>
+          <div class="absolute -top-4 -left-4 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-gold-600 font-semibold text-sm tracking-widest uppercase">About Us</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3 mb-5">Heritage Meets Modern Manufacturing</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto mb-6"></div>
+        <p class="text-navy-700/80 text-lg leading-relaxed">
+          Rooted in South Indian textile tradition and powered by state-of-the-art looms, 
+          we manufacture premium cotton towels and authentic veshtis for wholesale buyers, 
+          retail chains and global distributors who demand quality, consistency and scale.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-navy-900/5 text-center">
+          <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg text-navy-900 mb-2">Trusted Quality</h3>
+          <p class="text-navy-700/70 text-sm leading-relaxed">Strict quality checks at every stage — from yarn selection to final packing.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-navy-900/5 text-center">
+          <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg text-navy-900 mb-2">Manufacturing Scale</h3>
+          <p class="text-navy-700/70 text-sm leading-relaxed">Modern weaving units capable of fulfilling large wholesale and export orders on time.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-navy-900/5 text-center">
+          <div class="w-14 h-14 bg-navy-900 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg text-navy-900 mb-2">Export Ready</h3>
+          <p class="text-navy-700/70 text-sm leading-relaxed">Compliant packaging, documentation support and reliable logistics for international buyers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS ===================== -->
+  <section id="products" class="py-20 lg:py-28 bg-navy-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-gold-400 font-semibold text-sm tracking-widest uppercase">Our Collections</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-5">Core Product Showcase</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto mb-6"></div>
+        <p class="text-white/70 text-lg">Two flagship categories crafted for performance, comfort and lasting value.</p>
+      </div>
+
+      <!-- Towels -->
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <h3 class="font-display text-2xl font-bold text-white">Premium Towel Collection</h3>
+          <div class="flex-1 h-px bg-white/10"></div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Bath Towels -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">🛁</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Bath Towels</h4>
+              <p class="text-white/50 text-sm mb-3">High absorbency • Soft hand-feel</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• 400–600 GSM</li>
+                <li>• 100% Combed Cotton</li>
+                <li>• Hotel & Retail grades</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Hand Towels -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">✋</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Hand Towels</h4>
+              <p class="text-white/50 text-sm mb-3">Compact • Highly absorbent</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• 400–500 GSM</li>
+                <li>• Quick dry weave</li>
+                <li>• Ideal for hotels & homes</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Jacquard -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">✨</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Jacquard Towels</h4>
+              <p class="text-white/50 text-sm mb-3">Decorative patterns • Premium look</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• Custom designs</li>
+                <li>• Border & logo options</li>
+                <li>• Retail & gift packs</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Hotel Quality -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">🏨</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Hotel Quality</h4>
+              <p class="text-white/50 text-sm mb-3">Heavyweight • Long life</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• 500–600 GSM</li>
+                <li>• Industrial laundry ready</li>
+                <li>• Bulk packaging available</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veshtis -->
+      <div>
+        <div class="flex items-center gap-4 mb-8">
+          <h3 class="font-display text-2xl font-bold text-white">Authentic Veshti / Dhoti Collection</h3>
+          <div class="flex-1 h-px bg-white/10"></div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Gold Zari -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">👑</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Gold Zari Border</h4>
+              <p class="text-white/50 text-sm mb-3">Traditional ceremonial wear</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• Pure white combed cotton</li>
+                <li>• Durable gold border</li>
+                <li>• Single & double available</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Pure White -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">⚪</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Pure White Combed</h4>
+              <p class="text-white/50 text-sm mb-3">Everyday classic</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• Soft & breathable</li>
+                <li>• Zero shrinkage finish</li>
+                <li>• Multiple lengths</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Single / Double -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">📏</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Single & Double Dhotis</h4>
+              <p class="text-white/50 text-sm mb-3">Standard & premium grades</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• Precise measurements</li>
+                <li>• Border durability tested</li>
+                <li>• Bulk cartons ready</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Velcro Pocket -->
+          <div class="product-card bg-navy-800 rounded-xl overflow-hidden border border-white/5 transition duration-300">
+            <div class="h-40 bg-gradient-to-br from-navy-700 to-navy-800 flex items-center justify-center">
+              <span class="text-5xl">📌</span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-semibold text-white mb-1">Velcro Pocket Dhotis</h4>
+              <p class="text-white/50 text-sm mb-3">Modern convenience</p>
+              <ul class="text-xs text-white/60 space-y-1">
+                <li>• Secure pocket design</li>
+                <li>• Easy wear & care</li>
+                <li>• Growing retail demand</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="#contact" class="inline-flex items-center px-7 py-3.5 bg-gold-500 hover:bg-gold-600 text-white font-semibold rounded-md transition">
+          Request Product Catalog & Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MANUFACTURING & QUALITY ===================== -->
+  <section id="manufacturing" class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-gold-600 font-semibold text-sm tracking-widest uppercase">Capability</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3 mb-5">Manufacturing & Quality Assurance</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white rounded-xl p-8 border border-navy-900/5 shadow-sm">
+          <div class="text-gold-500 text-3xl font-bold mb-3">01</div>
+          <h3 class="font-semibold text-lg text-navy-900 mb-3">Modern Weaving & Stitching</h3>
+          <p class="text-navy-700/70 text-sm leading-relaxed">State-of-the-art looms and automated stitching lines deliver consistent GSM, even edges and high production volumes for wholesale orders.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 border border-navy-900/5 shadow-sm">
+          <div class="text-gold-500 text-3xl font-bold mb-3">02</div>
+          <h3 class="font-semibold text-lg text-navy-900 mb-3">Eco-Friendly Processes</h3>
+          <p class="text-navy-700/70 text-sm leading-relaxed">Responsible dyeing practices and careful finishing ensure color fastness with reduced environmental impact and zero shrinkage guarantee.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 border border-navy-900/5 shadow-sm">
+          <div class="text-gold-500 text-3xl font-bold mb-3">03</div>
+          <h3 class="font-semibold text-lg text-navy-900 mb-3">Bulk Customization</h3>
+          <p class="text-navy-700/70 text-sm leading-relaxed">Custom sizes, private labeling, branded packaging and OEM production available for distributors and retail chains.</p>
+        </div>
+      </div>
+
+      <!-- Quality badges -->
+      <div id="quality" class="bg-navy-900 rounded-2xl p-8 lg:p-12">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h3 class="font-display text-2xl font-bold text-white mb-4">Quality You Can Specify</h3>
+            <p class="text-white/70 mb-6 leading-relaxed">Every batch is checked for GSM consistency, absorbency, color fastness, dimensional stability and stitching integrity before dispatch.</p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold-400 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span class="text-white/85 text-sm">100% combed cotton yarn selection</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold-400 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span class="text-white/85 text-sm">Zero shrinkage guarantee after wash</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold-400 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span class="text-white/85 text-sm">High absorbency & soft hand-feel tested</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold-400 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span class="text-white/85 text-sm">Border & stitching durability for veshtis</span>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+              <div class="text-3xl font-bold text-gold-400">400–600</div>
+              <div class="text-white/60 text-sm mt-1">GSM Range</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+              <div class="text-3xl font-bold text-gold-400">100%</div>
+              <div class="text-white/60 text-sm mt-1">Combed Cotton</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+              <div class="text-3xl font-bold text-gold-400">OEM</div>
+              <div class="text-white/60 text-sm mt-1">Private Label</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+              <div class="text-3xl font-bold text-gold-400">Export</div>
+              <div class="text-white/60 text-sm mt-1">Ready Packing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== B2B / WHOLESALE ===================== -->
+  <section class="py-20 lg:py-28 bg-navy-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-gold-400 font-semibold text-sm tracking-widest uppercase">B2B Partners</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-5">Why Partner With Us?</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto mb-6"></div>
+        <p class="text-white/70">Built for wholesale buyers, distributors and retail chains who need reliability at scale.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-8 text-center">
+          <div class="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white text-lg mb-2">Competitive Pricing</h3>
+          <p class="text-white/60 text-sm">Factory-direct rates with transparent volume-based pricing for long-term partners.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-8 text-center">
+          <div class="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white text-lg mb-2">On-Time Delivery</h3>
+          <p class="text-white/60 text-sm">Disciplined production planning and logistics so your shelves stay stocked.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-8 text-center">
+          <div class="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+          </div>
+          <h3 class="font-semibold text-white text-lg mb-2">OEM / Private Label</h3>
+          <p class="text-white/60 text-sm">Your brand, our manufacturing. Custom labels, packaging and product specifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-gold-600 font-semibold text-sm tracking-widest uppercase">Get In Touch</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3 mb-5">Request a Wholesale Quote</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto mb-6"></div>
+        <p class="text-navy-700/80">Tell us your requirements. Our team will respond with pricing, lead times and samples if needed.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10">
+        <!-- Form -->
+        <div class="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-navy-900/5 p-6 sm:p-8">
+          <form id="quote-form" class="space-y-5" onsubmit="handleSubmit(event)">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium text-navy-900 mb-1.5">Full Name *</label>
+                <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-lg border border-navy-900/15 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition text-sm" placeholder="Your name" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-navy-900 mb-1.5">Email *</label>
+                <input type="email" name="email" required class="w-full px-4 py-2.5 rounded-lg border border-navy-900/15 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition text-sm" placeholder="you@company.com" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-medium text-navy-900 mb-1.5">Phone / WhatsApp *</label>
+                <input type="tel" name="phone" required class="w-full px-4 py-2.5 rounded-lg border border-navy-900/15 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition text-sm" placeholder="+91 9XXXXXXXXX" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-navy-900 mb-1.5">Product Interest</label>
+                <select name="product" class="w-full px-4 py-2.5 rounded-lg border border-navy-900/15 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition text-sm bg-white">
+                  <option value="">Select product</option>
+                  <option>Premium Towels (Bath / Hand / Jacquard)</option>
+                  <option>Hotel Quality Towels</option>
+                  <option>Veshti / Dhoti (Traditional)</option>
+                  <option>Velcro Pocket Dhotis</option>
+                  <option>Mixed / Custom Order</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-navy-900 mb-1.5">Estimated Order Quantity</label>
+              <input type="text" name="quantity" class="w-full px-4 py-2.5 rounded-lg border border-navy-900/15 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition text-sm" placeholder="e.g. 500 dozen / 2000 pcs" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-navy-900 mb-1.5">Message</label>
+              <textarea name="message" rows="4" class="w-full px-4 py-2.5 rounded-lg border border-navy-900/15 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition text-sm resize-none" placeholder="Share sizes, GSM preference, branding needs or any other details..."></textarea>
+            </div>
+            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-navy-900 hover:bg-navy-800 text-white font-semibold rounded-lg transition shadow-lg">
+              Submit Quote Request
+            </button>
+            <p id="form-status" class="text-sm hidden"></p>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="lg:col-span-2 space-y-6">
+          <div class="bg-navy-900 rounded-2xl p-6 sm:p-8 text-white">
+            <h3 class="font-semibold text-lg mb-5">Direct Contact</h3>
+            <div class="space-y-4 text-sm">
+              <div class="flex gap-3">
+                <svg class="w-5 h-5 text-gold-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div>
+                  <div class="font-medium">Factory Address</div>
+                  <div class="text-white/60 mt-0.5">Textile Cluster, South India<br/>(Exact address on request)</div>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <svg class="w-5 h-5 text-gold-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div>
+                  <div class="font-medium">Email</div>
+                  <a href="mailto:sales@srisubhamangaltextiles.com" class="text-gold-400 hover:underline">sales@srisubhamangaltextiles.com</a>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <svg class="w-5 h-5 text-gold-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <div>
+                  <div class="font-medium">Phone</div>
+                  <a href="tel:+919876543210" class="text-gold-400 hover:underline">+91 98765 43210</a>
+                </div>
+              </div>
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="mt-6 flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-lg transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+          <div class="bg-white rounded-xl border border-navy-900/5 p-6 text-sm text-navy-700/80">
+            <strong class="text-navy-900">Business Hours:</strong><br>
+            Monday – Saturday: 9:00 AM – 6:00 PM IST<br>
+            Response within 1 business day for quote requests.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-navy-900 text-white pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-full border-2 border-gold-500 flex items-center justify-center">
+              <span class="text-gold-500 font-display font-bold text-sm">S</span>
+            </div>
+            <span class="font-display font-bold text-lg">Sri Subha Mangal <span class="text-gold-500">Textiles</span></span>
+          </div>
+          <p class="text-white/50 text-sm leading-relaxed">Premium cotton towels & authentic veshtis from South India. Manufactured for quality, scale and trust.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wide uppercase text-gold-400">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/60">
+            <li><a href="#home" class="hover:text-gold-400 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-gold-400 transition">About Us</a></li>
+            <li><a href="#products" class="hover:text-gold-400 transition">Products</a></li>
+            <li><a href="#manufacturing" class="hover:text-gold-400 transition">Manufacturing</a></li>
+            <li><a href="#contact" class="hover:text-gold-400 transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wide uppercase text-gold-400">Products</h4>
+          <ul class="space-y-2 text-sm text-white/60">
+            <li>Bath & Hand Towels</li>
+            <li>Jacquard & Hotel Towels</li>
+            <li>Gold Zari Veshtis</li>
+            <li>Velcro Pocket Dhotis</li>
+            <li>OEM / Private Label</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wide uppercase text-gold-400">Certifications</h4>
+          <ul class="space-y-2 text-sm text-white/60">
+            <li>Quality Inspected Batches</li>
+            <li>Export Packaging Standards</li>
+            <li>Responsible Dyeing Practices</li>
+            <li>OEM Compliance Support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-white/40 text-sm">© 2026 Sri Subha Mangal Textiles. All rights reserved.</p>
+        <button type="button" onclick="openLogin()" class="text-white/40 hover:text-gold-400 text-xs underline">Admin Login</button>
+        <div class="flex gap-5">
+          <a href="#" class="text-white/40 hover:text-gold-400 transition" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" class="text-white/40 hover:text-gold-400 transition" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </div><!-- /publicSite -->
+
+  <!-- ADMIN PANEL -->
+  <div id="adminPanel">
+    <div class="admin-wrap">
+      <!-- DASHBOARD -->
+      <div id="admin-dash" class="admin-section">
+        <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">Dashboard</h2>
+        <div class="admin-grid" id="dashStats"></div>
+        <div class="admin-card">
+          <h3>Recent Quote Requests</h3>
+          <div id="dashRecentQuotes"></div>
+        </div>
+      </div>
+
+      <!-- QUOTES -->
+      <div id="admin-quotes" class="admin-section" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px">
+          <h2 class="font-display text-2xl font-bold text-navy-900">Quote Requests</h2>
+          <button type="button" class="btn-sm danger" onclick="clearAllQuotes()">Clear All</button>
+        </div>
+        <div id="quotesList"></div>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div id="admin-products" class="admin-section" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px">
+          <h2 class="font-display text-2xl font-bold text-navy-900">Products</h2>
+          <button type="button" class="btn-sm gold" onclick="openProductModal()">+ Add Product</button>
+        </div>
+        <div class="admin-card" style="overflow-x:auto">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Category</th><th>Specs</th><th>Status</th><th></th></tr></thead>
+            <tbody id="productsTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div id="admin-settings" class="admin-section" style="display:none">
+        <h2 class="font-display text-2xl font-bold text-navy-900 mb-6">Store Settings</h2>
+        <div class="admin-card" style="max-width:520px">
+          <div class="field"><label>Business Name</label><input id="setName" type="text"></div>
+          <div class="field"><label>Phone</label><input id="setPhone" type="text"></div>
+          <div class="field"><label>WhatsApp (with country code)</label><input id="setWa" type="text" placeholder="919876543210"></div>
+          <div class="field"><label>Email</label><input id="setEmail" type="email"></div>
+          <div class="field"><label>Address</label><textarea id="setAddress" rows="2"></textarea></div>
+          <button type="button" class="btn-sm primary" onclick="saveSettings()">Save Settings</button>
+        </div>
+        <div class="admin-card" style="max-width:520px;margin-top:16px">
+          <h3>Admin Password</h3>
+          <div class="field"><label>New Password</label><input id="setPass" type="password" placeholder="Leave blank to keep current"></div>
+          <button type="button" class="btn-sm primary" onclick="savePassword()">Update Password</button>
+          <p class="login-hint">Default: admin / admin123. Login via: Footer link · Mobile menu · Header Admin · ?admin=1 · Logo 5× click</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal-bg" id="loginModal">
+    <div class="modal-box">
+      <h3 class="font-display text-xl font-bold text-navy-900 mb-1">Admin Login</h3>
+      <p class="text-sm text-navy-700/70 mb-5">Sri Subha Mangal Textiles</p>
+      <div class="field"><label>Username</label><input id="loginUser" type="text" autocomplete="username"></div>
+      <div class="field"><label>Password</label><input id="loginPass" type="password" autocomplete="current-password"></div>
+      <p id="loginErr" class="text-sm text-red-600 mb-3 hidden"></p>
+      <button type="button" class="btn-sm primary w-full" style="width:100%;padding:12px" onclick="adminLogin()">Sign In</button>
+      <button type="button" class="btn-sm w-full" style="width:100%;margin-top:8px" onclick="closeLogin()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-bg" id="productModal">
+    <div class="modal-box">
+      <h3 class="font-display text-xl font-bold text-navy-900 mb-4" id="productModalTitle">Add Product</h3>
+      <input type="hidden" id="pEditId">
+      <div class="field"><label>Name</label><input id="pName" type="text"></div>
+      <div class="field"><label>Category</label>
+        <select id="pCat">
+          <option>Towels</option>
+          <option>Veshtis / Dhotis</option>
+          <option>OEM / Private Label</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label>Specs / Description</label><textarea id="pSpecs" rows="3"></textarea></div>
+      <div class="field"><label>Status</label>
+        <select id="pStatus"><option>Active</option><option>Hidden</option></select>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button type="button" class="btn-sm primary" onclick="saveProduct()">Save</button>
+        <button type="button" class="btn-sm" onclick="closeProductModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // ——— Public UI ———
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) navbar.classList.add('nav-scrolled');
+      else navbar.classList.remove('nav-scrolled');
+    });
+
+    // ——— Storage keys ———
+    const K = {
+      quotes: 'ssm_quotes',
+      products: 'ssm_products',
+      settings: 'ssm_settings',
+      pass: 'ssm_admin_pass',
+      session: 'ssm_admin_session'
+    };
+
+    const DEFAULT_PRODUCTS = [
+      {id:1, name:'Bath Towels', category:'Towels', specs:'400–600 GSM · 100% Combed Cotton · Hotel & Retail', status:'Active'},
+      {id:2, name:'Hand Towels', category:'Towels', specs:'400–500 GSM · Quick dry weave', status:'Active'},
+      {id:3, name:'Jacquard Towels', category:'Towels', specs:'Custom designs · Border & logo options', status:'Active'},
+      {id:4, name:'Hotel Quality Towels', category:'Towels', specs:'Bulk hospitality grade · Durable weave', status:'Active'},
+      {id:5, name:'Gold Zari Veshtis', category:'Veshtis / Dhotis', specs:'Traditional · Premium finish', status:'Active'},
+      {id:6, name:'Velcro Pocket Dhotis', category:'Veshtis / Dhotis', specs:'Modern convenience · Everyday wear', status:'Active'},
+      {id:7, name:'OEM / Private Label', category:'OEM / Private Label', specs:'Custom brand · Packaging · Specs', status:'Active'}
+    ];
+
+    const DEFAULT_SETTINGS = {
+      name: 'Sri Subha Mangal Textiles',
+      phone: '+91 98765 43210',
+      wa: '919876543210',
+      email: 'sales@srisubhamangaltextiles.com',
+      address: 'Textile Cluster, South India'
+    };
+
+    let quotes = [];
+    let products = [];
+    let settings = {};
+    let isAdmin = false;
+
+    function loadAll() {
+      try { quotes = JSON.parse(localStorage.getItem(K.quotes)) || []; } catch(e) { quotes = []; }
+      try { products = JSON.parse(localStorage.getItem(K.products)) || DEFAULT_PRODUCTS.slice(); } catch(e) { products = DEFAULT_PRODUCTS.slice(); }
+      try { settings = JSON.parse(localStorage.getItem(K.settings)) || Object.assign({}, DEFAULT_SETTINGS); } catch(e) { settings = Object.assign({}, DEFAULT_SETTINGS); }
+      if (!localStorage.getItem(K.pass)) localStorage.setItem(K.pass, 'admin123');
+      applyPublicSettings();
+    }
+
+    function applyPublicSettings() {
+      const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+      phoneLinks.forEach(a => { a.href = 'tel:' + (settings.phone || '').replace(/\s/g,''); a.textContent = settings.phone || a.textContent; });
+      const wa = document.querySelector('a[href*="wa.me"]');
+      if (wa) wa.href = 'https://wa.me/' + (settings.wa || '919876543210');
+      const mail = document.querySelector('a[href^="mailto:"]');
+      if (mail) { mail.href = 'mailto:' + (settings.email || ''); mail.textContent = settings.email || mail.textContent; }
+    }
+
+    // Quote form → save for admin
+    function handleSubmit(e) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const q = {
+        id: 'Q' + Date.now(),
+        name: (fd.get('name') || '').trim(),
+        email: (fd.get('email') || '').trim(),
+        phone: (fd.get('phone') || '').trim(),
+        product: fd.get('product') || '',
+        quantity: (fd.get('quantity') || '').trim(),
+        message: (fd.get('message') || '').trim(),
+        status: 'new',
+        createdAt: new Date().toISOString()
+      };
+      quotes.unshift(q);
+      localStorage.setItem(K.quotes, JSON.stringify(quotes));
+      const status = document.getElementById('form-status');
+      status.classList.remove('hidden');
+      status.className = 'text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3';
+      status.textContent = 'Thank you! Your quote request has been received. Our team will contact you within 1 business day.';
+      e.target.reset();
+    }
+
+    // ——— Admin auth ———
+    function openLogin() {
+      document.getElementById('loginModal').classList.add('show');
+      document.getElementById('loginErr').classList.add('hidden');
+      setTimeout(() => {
+        const u = document.getElementById('loginUser');
+        if (u) u.focus();
+      }, 50);
+    }
+    document.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('loginModal');
+      if (modal && modal.classList.contains('show') && e.key === 'Enter') {
+        e.preventDefault();
+        adminLogin();
+      }
+    });
+    function closeLogin() {
+      document.getElementById('loginModal').classList.remove('show');
+    }
+    function adminLogin() {
+      const u = document.getElementById('loginUser').value.trim();
+      const p = document.getElementById('loginPass').value;
+      const saved = localStorage.getItem(K.pass) || 'admin123';
+      if (u === 'admin' && p === saved) {
+        isAdmin = true;
+        localStorage.setItem(K.session, '1');
+        closeLogin();
+        enterAdmin();
+      } else {
+        const err = document.getElementById('loginErr');
+        err.textContent = 'Invalid username or password';
+        err.classList.remove('hidden');
+      }
+    }
+    function adminLogout() {
+      isAdmin = false;
+      localStorage.removeItem(K.session);
+      document.getElementById('adminBar').classList.remove('show');
+      document.getElementById('adminPanel').classList.remove('show');
+      document.getElementById('publicSite').classList.remove('hide');
+    }
+    function enterAdmin() {
+      document.getElementById('adminBar').classList.add('show');
+      document.getElementById('adminPanel').classList.add('show');
+      document.getElementById('publicSite').classList.add('hide');
+      showAdminTab('dash');
+    }
+    function exitAdmin() {
+      document.getElementById('adminPanel').classList.remove('show');
+      document.getElementById('publicSite').classList.remove('hide');
+    }
+
+    function showAdminTab(tab) {
+      document.querySelectorAll('.admin-section').forEach(el => el.style.display = 'none');
+      const el = document.getElementById('admin-' + tab);
+      if (el) el.style.display = 'block';
+      document.querySelectorAll('.admin-bar button[data-admin]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-admin') === tab);
+      });
+      if (tab === 'dash') renderDash();
+      if (tab === 'quotes') renderQuotes();
+      if (tab === 'products') renderProductsTable();
+      if (tab === 'settings') fillSettingsForm();
+    }
+
+    function renderDash() {
+      const newQ = quotes.filter(q => q.status === 'new').length;
+      document.getElementById('dashStats').innerHTML = `
+        <div class="admin-stat"><div class="n">${quotes.length}</div><div class="l">Total Quotes</div></div>
+        <div class="admin-stat"><div class="n">${newQ}</div><div class="l">New / Pending</div></div>
+        <div class="admin-stat"><div class="n">${products.filter(p=>p.status==='Active').length}</div><div class="l">Active Products</div></div>
+        <div class="admin-stat"><div class="n">${products.length}</div><div class="l">All Products</div></div>`;
+      const recent = quotes.slice(0, 5);
+      document.getElementById('dashRecentQuotes').innerHTML = recent.length ? recent.map(q => quoteCard(q)).join('') : '<p class="text-sm text-slate-500">No quote requests yet.</p>';
+    }
+
+    function quoteCard(q) {
+      const badge = q.status === 'new' ? '<span class="badge-new">NEW</span>' : '<span class="badge-done">DONE</span>';
+      const date = new Date(q.createdAt).toLocaleString();
+      return `<div class="quote-item">
+        <div class="meta">${date} · ${badge}</div>
+        <div class="name">${esc(q.name)} · ${esc(q.phone)}</div>
+        <div class="text-sm text-slate-600 mt-1">${esc(q.email)} · ${esc(q.product || '—')}</div>
+        <div class="text-sm text-slate-500 mt-1">Qty: ${esc(q.quantity || '—')}</div>
+        ${q.message ? `<div class="text-sm mt-2 text-slate-700">${esc(q.message)}</div>` : ''}
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="btn-sm" onclick="markQuote('${q.id}','done')">Mark Done</button>
+          <button type="button" class="btn-sm" onclick="markQuote('${q.id}','new')">Mark New</button>
+          <a class="btn-sm gold" href="https://wa.me/${(q.phone||'').replace(/\\D/g,'')}?text=${encodeURIComponent('Hi '+q.name+', regarding your quote request for Sri Subha Mangal Textiles...')}" target="_blank">WhatsApp</a>
+          <button type="button" class="btn-sm danger" onclick="deleteQuote('${q.id}')">Delete</button>
+        </div>
+      </div>`;
+    }
+
+    function esc(s) {
+      return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function renderQuotes() {
+      document.getElementById('quotesList').innerHTML = quotes.length
+        ? quotes.map(q => quoteCard(q)).join('')
+        : '<p class="text-sm text-slate-500">No quote requests yet. Submissions from the contact form appear here.</p>';
+    }
+
+    function markQuote(id, st) {
+      quotes = quotes.map(q => q.id === id ? Object.assign({}, q, {status: st}) : q);
+      localStorage.setItem(K.quotes, JSON.stringify(quotes));
+      renderQuotes(); renderDash();
+    }
+    function deleteQuote(id) {
+      if (!confirm('Delete this quote?')) return;
+      quotes = quotes.filter(q => q.id !== id);
+      localStorage.setItem(K.quotes, JSON.stringify(quotes));
+      renderQuotes(); renderDash();
+    }
+    function clearAllQuotes() {
+      if (!confirm('Delete ALL quote requests?')) return;
+      quotes = [];
+      localStorage.setItem(K.quotes, JSON.stringify(quotes));
+      renderQuotes(); renderDash();
+    }
+
+    function renderProductsTable() {
+      const tb = document.getElementById('productsTable');
+      tb.innerHTML = products.map(p => `<tr>
+        <td>${esc(p.name)}</td>
+        <td>${esc(p.category)}</td>
+        <td style="max-width:220px">${esc(p.specs)}</td>
+        <td>${esc(p.status)}</td>
+        <td style="white-space:nowrap">
+          <button type="button" class="btn-sm" onclick="editProduct(${p.id})">Edit</button>
+          <button type="button" class="btn-sm danger" onclick="deleteProduct(${p.id})">Del</button>
+        </td>
+      </tr>`).join('');
+    }
+
+    function openProductModal(p) {
+      document.getElementById('productModal').classList.add('show');
+      document.getElementById('productModalTitle').textContent = p ? 'Edit Product' : 'Add Product';
+      document.getElementById('pEditId').value = p ? p.id : '';
+      document.getElementById('pName').value = p ? p.name : '';
+      document.getElementById('pCat').value = p ? p.category : 'Towels';
+      document.getElementById('pSpecs').value = p ? p.specs : '';
+      document.getElementById('pStatus').value = p ? p.status : 'Active';
+    }
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('show');
+    }
+    function editProduct(id) {
+      const p = products.find(x => x.id === id);
+      if (p) openProductModal(p);
+    }
+    function saveProduct() {
+      const id = document.getElementById('pEditId').value;
+      const row = {
+        id: id ? Number(id) : Date.now(),
+        name: document.getElementById('pName').value.trim(),
+        category: document.getElementById('pCat').value,
+        specs: document.getElementById('pSpecs').value.trim(),
+        status: document.getElementById('pStatus').value
+      };
+      if (!row.name) return alert('Enter product name');
+      if (id) products = products.map(p => p.id === row.id ? row : p);
+      else products.push(row);
+      localStorage.setItem(K.products, JSON.stringify(products));
+      closeProductModal();
+      renderProductsTable();
+      renderDash();
+    }
+    function deleteProduct(id) {
+      if (!confirm('Delete product?')) return;
+      products = products.filter(p => p.id !== id);
+      localStorage.setItem(K.products, JSON.stringify(products));
+      renderProductsTable();
+      renderDash();
+    }
+
+    function fillSettingsForm() {
+      document.getElementById('setName').value = settings.name || '';
+      document.getElementById('setPhone').value = settings.phone || '';
+      document.getElementById('setWa').value = settings.wa || '';
+      document.getElementById('setEmail').value = settings.email || '';
+      document.getElementById('setAddress').value = settings.address || '';
+      document.getElementById('setPass').value = '';
+    }
+    function saveSettings() {
+      settings = {
+        name: document.getElementById('setName').value.trim(),
+        phone: document.getElementById('setPhone').value.trim(),
+        wa: document.getElementById('setWa').value.trim(),
+        email: document.getElementById('setEmail').value.trim(),
+        address: document.getElementById('setAddress').value.trim()
+      };
+      localStorage.setItem(K.settings, JSON.stringify(settings));
+      applyPublicSettings();
+      alert('Settings saved');
+    }
+    function savePassword() {
+      const p = document.getElementById('setPass').value;
+      if (!p || p.length < 4) return alert('Password min 4 characters');
+      localStorage.setItem(K.pass, p);
+      document.getElementById('setPass').value = '';
+      alert('Password updated');
+    }
+
+    // Secret: click logo 5 times OR ?admin=1
+    let logoClicks = 0;
+    document.addEventListener('DOMContentLoaded', () => {
+      loadAll();
+      if (localStorage.getItem(K.session) === '1') {
+        isAdmin = true;
+        enterAdmin();
+      }
+      if (location.search.includes('admin=1')) openLogin();
+      const logo = document.querySelector('header a[href="#home"]');
+      if (logo) {
+        logo.addEventListener('click', (e) => {
+          logoClicks++;
+          if (logoClicks >= 5) {
+            logoClicks = 0;
+            openLogin();
+          }
+          setTimeout(() => { logoClicks = 0; }, 2000);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
